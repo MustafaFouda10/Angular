@@ -1,0 +1,23 @@
+<!-- <p>login works!</p> -->
+
+<form action="" #loginForm="ngForm" (onsubmit)="login(loginForm.value)">
+
+    <div>
+        <label for="">userName </label>
+        <input type="text" name="Username" #username="ngModel" [(ngModel)]="user.userName" required> {{user|json}} 
+        <p class="alert alert-danger" style="color: red; font-size: 2rem;" [hidden]="username.valid || username.pristine">Invalid Username</p>
+    </div>
+
+    <div>
+        <label for="">password </label>
+        <input type="text" name="Userpassword" #userpassword="ngModel" [(ngModel)]="user.password" required minlength="8">
+        <p class="alert alert-danger" style="color: red; font-size: 2rem;" [hidden]="userpassword.valid || userpassword.pristine">Invalid Username</p>
+        <p class="alert alert-danger" *ngIf="userpassword.errors?.['minlength']">password should be at least 8 chars</p>
+    </div>
+
+    <div>
+        <input type="button" value="login" class="btn btn-outline-success w-75 m-5" [disabled]="loginForm.invalid">
+    </div>
+
+    {{loginForm.value|json}}
+</form>

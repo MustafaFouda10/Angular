@@ -1,0 +1,24 @@
+<div class="container-fluid" style="padding: 2rem;">
+    <div class="row" >
+        <input type="text" #content class="col-2 m-2"> 
+        <input type="button" value="ADD" class="btn btn-success col-1 m-2" (click)="pushItem(allitems?.length, content.value)">
+    </div>
+
+    <span class="col-2 m-2">TODO LIST </span><input type="text" #filter (input)="filterItem(filter.value)" class="col-2 m-2">
+
+    <p class="col-2 m-2">There are {{allitems?.length}} items</p>
+    <div *ngFor="let i of allitems" class="col-6 m-2 container-fluid">
+        <p class="row">
+            <span class="col-4 m-2">{{i.content}}</span> <button class="btn btn-danger col-2" (click) = "dropItem(allitems?.indexOf(i))">DELETE</button>
+        </p>
+    </div>
+</div>
+
+<!-- example 1 -->
+<div>
+    <input type="text" #userdataInput >
+    <input type="button" class="btn btn-success ms-2" value="addToArray" (click)="adduser(userdataInput.value)">
+</div>
+<ul>
+    <li *ngFor="let user of userdataList">{{user}}</li>
+</ul>

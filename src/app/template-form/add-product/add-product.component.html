@@ -1,0 +1,31 @@
+<!-- <p>add-product works!</p> -->
+
+<form action="" [formGroup]="myForm">
+
+    <div>
+        <label for="">title </label>
+        <input type="text" formControlName="title">
+        <p class="alert alert-danger" [hidden]="title.errors?.['required']">Invalid Title</p>
+        <p class="alert alert-danger" [hidden]="title.errors?.['minlength']">Title should be at least 6 chars</p>
+    </div>
+
+    <div>
+        <label for="">description </label>
+        <input type="text" formControlName="description">
+    </div>
+    
+    <div>
+        <label for="">imgUrl </label>
+        <input type="text" formControlName="imgUrl">
+    </div>
+    
+    <div>
+        <label for="">price </label>
+        <input type="text" formControlName="price">
+    </div>
+
+    <div>
+        <input type="button" value="Add" class="btn btn-outline-danger" [disabled]="myForm.invalid">
+    </div>
+
+</form>

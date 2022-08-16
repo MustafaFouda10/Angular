@@ -1,0 +1,14 @@
+<!-- <p>product-card works!</p> -->
+
+<!-- product card -->
+<div class="card mb-5" style="height: 47rem;">
+    <img src="{{productsData?.image}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 [routerLink]="['/productdetails',productsData.id]" class="card-title">{{productsData?.title}}</h5>
+      <p class="card-text">{{productsData.description|slicePipe:30}}</p>
+      <p class="card-text">price: {{productsData?.price}}$</p>
+
+      <a class="btn btn-outline-success m-1" [hidden]="showBack"  (click)="sendProduct()">+ add to cart</a>
+      <a class="btn btn-outline-danger m-1"  [hidden]="showBack" (click)="sendFavProduct()">+ add to favourite</a>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<!-- <p>favourite-product works!</p> -->
+
+<div>
+    <h4 style="color: white; font-size:30px;">Favourites</h4>
+
+    <div *ngFor="let i of allItems">
+      <img class="card-img-top" width="200px" height="200px" src={{i.image}} alt="Card image cap">
+      <p style="color: white; font-size:15px;">{{i.title}}</p>
+    </div>
+
+</div>

@@ -1,0 +1,67 @@
+<!-- {{homeName}} -->
+
+<!-- for of >> shows values ||| for in >> shows indexes -->
+<!--كده كل مره هيعمل برجراف جديد ويضيف قيمةالمتغير-->
+<!-- <p *ngFor="let d of days">{{d}}</p>  -->
+
+<!-- <ul>
+    <li *ngFor="let d of days">{{d}}</li>
+</ul>
+
+<select>
+    <option value="{{i}}" *ngFor="let z of days; let i = index;">{{z}}</option>
+</select> -->
+
+
+<!-- isValid= false in .ts -->
+<!-- <p *ngIf="isValid"> 
+    this is a paragraph
+</p> -->
+
+
+<!-- لو عاوز أظهر حاجه وأخفي حاجه تانية -->
+<!-- <span *ngIf="isValid then show else hide "></span>
+<ng-template #show>
+    <p>show</p>
+</ng-template>
+<ng-template #hide>
+    <p>hide</p>
+</ng-template> -->
+
+<!-- OR -->
+<!-- <p *ngIf="isValid"> 
+    this is a paragraph show
+</p> -->
+<!-- <p *ngIf="!isValid"> 
+    this is a paragraph hide
+</p> -->
+
+
+<!-- [ng switch] -->
+<!-- <ul>
+    <li *ngFor="let p of people" [ngSwitch]="p.country">
+        <p *ngSwitchCase="'egypt'" style="color: red;">{{p.id}}- {{p.country}}</p>
+        <p *ngSwitchCase="'usa'" style="color: blue;">{{p.id}}- {{p.country}}</p>
+        <p *ngSwitchDefault style="color: yellow;">{{p.id}}- {{p.country}}</p>
+    </li>
+</ul> -->
+
+<ul *ngFor="let p of peopleByCountry" [ngSwitch]="p.country">
+    <li *ngSwitchCase="'UK'" style="color: red;">{{p.country}}
+        <ul>
+            <li *ngFor="let z of p.people" style="color: black;">{{z.name}}</li>
+        </ul>
+    </li>
+
+    <li *ngSwitchCase="'US'" style="color: BLUE;">{{p.country}}
+        <ul>
+            <li *ngFor="let z of p.people" style="color: black;">{{z.name}}</li>
+        </ul>
+    </li>
+
+    <li *ngSwitchCase="'MARS'" style="color: yellow;">{{p.country}}
+        <ul>
+            <li *ngFor="let z of p.people" style="color: black;">{{z.name}}</li>
+        </ul>
+    </li>
+</ul>

@@ -1,0 +1,16 @@
+<!-- <p>product-list works!</p> -->
+
+<div class="container">
+    <div class="row">
+        <!-- <div class="d-flex justify-content-center">
+            <h4>
+                {{product?.title}} <br>
+                <img src="{{product?.image}}" alt="" style="width: 200px; height:auto;" class="d-block m-auto">
+            </h4>
+        </div> -->
+       
+        <app-product-card *ngFor="let product of prdList" class="col-3" [productsData]="product"
+         (onProductSelected)="getSelectedProduct($event)">
+        </app-product-card>
+    </div>
+</div>
